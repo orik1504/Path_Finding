@@ -18,3 +18,8 @@ class Gui_board(Grid):
     """
     colors = {"white":(255,255,255), "black":(0,0,0), "green":(0,128,0), "red":(255,0,0), "orange":(255, 165, 0), "blue":(0,255,255), "purple":(128,0,128), "gray":(128,128,128)}
 
+    def __init__(self,size,width):
+        """ This functuion will start a new clean grid """
+        super().__init__(size,width)
+        self.window = pygame.display.set_mode((self.width, self.width))
+
