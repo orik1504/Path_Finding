@@ -30,3 +30,9 @@ class Node():
     def is_empty(self):
         return self.color == (255,255,255) or self.color == None
     
+    def __lt__(self,other):
+        return False
+
+
+    
+
