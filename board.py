@@ -23,3 +23,7 @@ class Node():
         """ will update the neighbors of current node """
         # * the neighbors are node instances but changing the node.x and node.y by 1 every time.
         pass
+    
+    def change_color(self,color):
+        self.color = color
+    
