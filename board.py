@@ -27,3 +27,6 @@ class Node():
     def change_color(self,color):
         self.color = color
     
+    def is_empty(self):
+        return self.color == (255,255,255) or self.color == None
+    
