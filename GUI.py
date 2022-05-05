@@ -23,3 +23,7 @@ class Gui_board(Grid):
         super().__init__(size,width)
         self.window = pygame.display.set_mode((self.width, self.width))
 
+    def change_bg_to_white(self,):
+        self.window.fill((self.colors["white"]))
+        pygame.display.update()
+    
