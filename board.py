@@ -19,3 +19,7 @@ class Node():
         self.color = color # * at first the node color will be white/blank
         self.neighbors = [] # * the neighbors of certain node, will be the other nodes that seround the current node
 
+    def update_neighbors(self):
+        """ will update the neighbors of current node """
+        # * the neighbors are node instances but changing the node.x and node.y by 1 every time.
+        pass
