@@ -45,3 +45,16 @@ class Gui_board(Grid):
                 pygame.draw.line(self.window,GRAY,(col*self.node_gap,0),(col*self.node_gap,self.width))
         pygame.display.update()
     
+    def check_if_one_node(self,is_starting:bool):
+        for row in range(self.size):
+            for col in range(self.size):
+                if is_starting:
+                    if self.grid[row][col].color == self.colors["blue"]:
+                        return False
+                else:
+                    if self.grid[row][col].color == self.colors["orange"]:
+                        return False
+        return True
+
+
+
