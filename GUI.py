@@ -33,3 +33,7 @@ class Gui_board(Grid):
         self.create_grid_lines()
         pygame.display.update()
     
+    def get_clicked_location(self, pos): #* a function to get the top right corner of each node, this represents the node location
+        x, y = pos
+        return x//self.node_gap, y// self.node_gap #* I will get the x,y locations of the certain node
+
