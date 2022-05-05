@@ -56,3 +56,7 @@ class Grid(Node):
             node_gap = self.width//self.size
             self.grid.append([Node(row,col,self.node_gap,None) for col in range(self.size)])
 
+    
+    def get_distance(self,node1, node2):
+        return self.width*(abs(node1.x-node2.x)+abs(node1.y-node2.y))
+   
