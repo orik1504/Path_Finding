@@ -37,3 +37,11 @@ class Gui_board(Grid):
         x, y = pos
         return x//self.node_gap, y// self.node_gap #* I will get the x,y locations of the certain node
 
+    def create_grid_lines(self,):
+        GRAY = (128,128,128)
+        for row in range(self.size):
+            pygame.draw.line(self.window,GRAY,(0,row*self.node_gap),(self.width,row*self.node_gap))
+            for col in range(self.size):
+                pygame.draw.line(self.window,GRAY,(col*self.node_gap,0),(col*self.node_gap,self.width))
+        pygame.display.update()
+    
