@@ -58,3 +58,40 @@ class Gui_board(Grid):
 
 
 
+def main():
+    run  = True
+    board = Gui_board(20,1000)
+    board.change_bg_to_white()
+    board.create_grid_lines()
+    print(board.grid)
+
+    while run:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                run = False
+            
+            #TODO: need to check if I have only one start point and one end point
+            mouse_click = pygame.mouse.get_pressed(5)
+            if mouse_click: 
+                x,y = board.get_clicked_location(pygame.mouse.get_pos())
+                node = board.grid[x][y]
+                if mouse_click[0]: # * Left click on mouse, will represent barrier 
+                    board.draw_node(node,"black")
+
+                if mouse_click[2]: # * right click on mouse, will represent clean 
+                    board.draw_node(node,"white")
+
+                if node.is_empty():    
+                    if mouse_click[4] and board.check_if_one_node(True): # * far side mouse click , will represent the start point
+                        board.draw_node(node,"blue")
+
+                    if mouse_click[3] and board.check_if_one_node(False): # * close side mouse click, will represent the end point
+                        board.draw_node(node,"orange")
+
+
+
+
+    
+pygame.quit()
+
+
