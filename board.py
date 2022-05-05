@@ -38,3 +38,11 @@ class Node():
 
 class Grid(Node):
     """ Will make a board (list of listst) using the node class in each index """
+    def __init__(self, size:int , width):
+        self.size = size # * size might refer to rows
+        self.width = width
+        self.node_gap = width//size
+        self.grid = list()
+        self.create_grid()
+
+    
