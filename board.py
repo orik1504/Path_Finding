@@ -36,3 +36,5 @@ class Node():
 
     
 
+class Grid(Node):
+    """ Will make a board (list of listst) using the node class in each index """
