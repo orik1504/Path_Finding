@@ -27,3 +27,9 @@ class Gui_board(Grid):
         self.window.fill((self.colors["white"]))
         pygame.display.update()
     
+    def draw_node(self,node,color):
+        node.change_color(self.colors[color])
+        pygame.draw.rect(self.window, node.color, (node.x*node.width, node.y*node.width, node.width, node.width))
+        self.create_grid_lines()
+        pygame.display.update()
+    
