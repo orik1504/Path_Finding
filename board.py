@@ -46,3 +46,13 @@ class Grid(Node):
         self.create_grid()
 
     
+    def create_grid(self):
+        """ this function will make nested list of nodes, that will be size X size grid
+        for example - grid with size = 3:
+            [[Node(x1,y1,gap),Node(x2,y2,gap),Node(x3,y3,gap)],
+             [Node(x4,y4,gap),Node(x5,y5,gap),Node(x6,y6,gap)],
+             [Node(x7,y7,gap),Node(x8,y8,gap),Node(x9,y9,gap)]] """
+        for row in range(self.size):
+            node_gap = self.width//self.size
+            self.grid.append([Node(row,col,self.node_gap,None) for col in range(self.size)])
+
